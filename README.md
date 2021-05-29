@@ -6,15 +6,15 @@ This database has been set up to support easy-to-use optimized queries and data 
 songplays : keys={songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent}
 
 ## Dimension Tables (4) 
-users : keys={user_id, first_name, last_name, gender, level}
-songs : keys={song_id, title, artist_id, year, duration}
-aritsts : keys={artist_id, name, location, latitude, longitude}
+users : keys={user_id, first_name, last_name, gender, level}\
+songs : keys={song_id, title, artist_id, year, duration}\
+aritsts : keys={artist_id, name, location, latitude, longitude}\
 time : keys={start_time, hour, day, week, month, year, weekday}
 
 The justifications for this choice of schema include:
 
-a) Being denormalized, the join logic required for queries is much simpler than with a normalized schema.
-b) Simplified reporting logic for queries of business interest.
+a) Being denormalized, the join logic required for queries is much simpler than with a normalized schema.\
+b) Simplified reporting logic for queries of business interest.\
 c) Optimized query performance (especially for aggregations).
 
 
@@ -37,12 +37,12 @@ c) Optimized query performance (especially for aggregations).
 
 1) Drop any existing tables and create new (empty) tables:
 
-From the terminal (in the directory containing the Python scripts), type: python create_tables.py
+From the terminal (in the directory containing the Python scripts), type: `python create_tables.py`
 
-(NOTE: This script imports sql_queries.py, which must be in the same directory)
+(*NOTE: This script imports sql_queries.py, which must be in the same directory*)
 
 2) Extract the JSON files, Transform and Load data into the Fact and Dimension Tables:
 
-From the terminal, type: python etl.py
+From the terminal, type: `python etl.py``
 
-(NOTE: This script also imports sql_queries.py, which must be in the same directory)
+(*NOTE: This script also imports sql_queries.py, which must be in the same directory*)
